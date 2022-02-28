@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Ovo&family=Rye&display=swap');
+
+html, body {
+    margin: 0;
+    height: 100%;
+    font-family: 'Ovo', cursive;
+}
+
+body {
+    background: url('../src/img/barber-bg.jpg');
+    background-size: cover;
+}
+
+#content {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    height: 100%;
+    min-height: 100%;
+}
+
+header {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 15px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, .5);
+    border-bottom: 2px solid white;
+}
+
+header h1 {
+    color: white;
+    font-family: 'Rye', cursive;
+    font-size: 4em;
+    margin: 10px;
+}
+
+header img {
+    background-color: white;
+    height: 100px; 
+    padding: 0px 15px;
+    border-radius: 5px;
+}
+
+header button {
+    color: white;
+    background: none;
+    border: none;
+    border-radius: 15px 15px 0px 0px;
+    width: 120px;
+    font-size: 1.5em;
+    margin: 0 10px;
+}
+
+header button:hover {
+    background-color: #111315;
+}
+
+header button.active {
+    background-color: #212529;
+}
+
+main {
+    background-color: rgba(0, 0, 0, .9);
+    flex: 1;
+    height: 100%;
+    width: 700px;
+    color: white;
+    margin: 20px;
+    padding: 50px;
+    border: 5px double white;
+    border-radius: 10px;
+    display: flex;
+    flex-flow: column;
+    overflow: auto;
+}
+
+main h2 {
+    font-family: 'Clicker Script', cursive;
+    font-size: 3em;
+    margin: 0px;
+}
+
+main img {
+    display: flex;
+    align-self: center;
+    border: 5px solid black;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    width: 400px;
+    text-align: center;
+    border-radius: 20px 20px 0px 0px;
+}
+
+footer p {
+    margin: 5px;
+}
+
+footer a {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+}
