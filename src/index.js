@@ -1,9 +1,10 @@
 import Logo from './img/beard-mc-s.jpg';
 import home from './home.js';
+import menu from './menu.js';
 
 const content = document.getElementById("content");
 
-// Header
+
 const header = document.createElement("header");
 
 const logo = new Image();
@@ -17,7 +18,6 @@ const nav = document.createElement("nav");
 
 const homeBtn = document.createElement("button");
 homeBtn.textContent = "Home";
-// TODO addEventListener => loadHome();
 nav.appendChild(homeBtn);
 
 const menuBtn = document.createElement("button");
@@ -34,10 +34,10 @@ header.appendChild(logo);
 header.appendChild(restaurantName);
 header.appendChild(nav);
 
+// Header
+
 content.appendChild(header);
 
-// Main
-content.appendChild(home);
 
 // Footer
 const footer = document.createElement("footer");
@@ -53,3 +53,22 @@ p.innerHTML =
 footer.appendChild(p);
 
 content.appendChild(footer);
+
+content.insertBefore(home(), header.nextSibling);
+
+homeBtn.addEventListener('click', loadHome);
+menuBtn.addEventListener('click', loadMenu);
+
+function loadHome() {
+    content.removeChild(content.children[1]);
+    homeBtn.classList.add('active');
+    menuBtn.classList.remove('active');
+    content.insertBefore(home(), header.nextSibling);
+};
+
+function loadMenu() {
+    content.removeChild(content.children[1]);
+    menuBtn.classList.add('active');
+    homeBtn.classList.remove('active');
+    content.insertBefore(menu(), header.nextSibling);
+}
