@@ -1,3 +1,17 @@
+import optionImgSrc from './img/placeholder-option.png';
+
+function createOptionCard(beard) {
+    const optionCard = document.createElement('div');
+    optionCard.classList.add('option-card');
+    const optionImg = new Image();
+    optionImg.src = optionImgSrc;
+    optionCard.appendChild(optionImg);
+    const optionText = document.createElement('p');
+    optionText.textContent = beard;
+    optionCard.appendChild(optionText);
+
+    return optionCard;
+};
 
 function menu() {
     const options = [
@@ -8,16 +22,15 @@ function menu() {
         "Anchor",
         "Mustache",
         "Sideburns",
-    ]
+        "Wizard",
+    ];
 
     const main = document.createElement('main');
+    main.classList.add('menu');
 
-    for (let option in options) {
-        const optionCard = document.createElement('div');
-        optionCard.classList.add('option');
-        optionCard.textContent = options[option];
-        main.appendChild(optionCard);
-    }
+    options.forEach(beard => {
+        main.appendChild(createOptionCard(beard));
+    });
 
     return main;
 

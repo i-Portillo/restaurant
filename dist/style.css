@@ -78,17 +78,42 @@ main {
     overflow: auto;
 }
 
-main h2 {
+.home h2 {
     font-family: 'Clicker Script', cursive;
     font-size: 3em;
     margin: 0px;
 }
 
-main img {
+.home img {
     display: flex;
     align-self: center;
     border: 5px solid black;
     border-radius: 5px;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.menu .option-card {
+    width: 200px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-self: center;
+    border: 2px solid white;
+    border-radius: 3px;
+    padding: 15px;
+}
+
+.menu img {
+    width: 150px;
+}
+
+.menu p {
+    font-size: 1.2em;
 }
 
 footer {

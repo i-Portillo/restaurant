@@ -1,9 +1,9 @@
 import Logo from './img/beard-mc-s.jpg';
 import home from './home.js';
 import menu from './menu.js';
+import contact from './contact.js';
 
 const content = document.getElementById("content");
-
 
 const header = document.createElement("header");
 
@@ -22,19 +22,15 @@ nav.appendChild(homeBtn);
 
 const menuBtn = document.createElement("button");
 menuBtn.textContent = "Menu";
-// TODO addEventListener => loadMenu();
 nav.appendChild(menuBtn);
 
 const contactBtn = document.createElement("button");
 contactBtn.textContent = "Contact";
-// TODO addEventListener => loadContact();
 nav.appendChild(contactBtn)
 
 header.appendChild(logo);
 header.appendChild(restaurantName);
 header.appendChild(nav);
-
-// Header
 
 content.appendChild(header);
 
@@ -56,13 +52,16 @@ content.appendChild(footer);
 
 content.insertBefore(home(), header.nextSibling);
 
+
 homeBtn.addEventListener('click', loadHome);
 menuBtn.addEventListener('click', loadMenu);
+contactBtn.addEventListener('click', loadContact);
 
 function loadHome() {
     content.removeChild(content.children[1]);
     homeBtn.classList.add('active');
     menuBtn.classList.remove('active');
+    contactBtn.classList.remove('active');
     content.insertBefore(home(), header.nextSibling);
 };
 
@@ -70,5 +69,14 @@ function loadMenu() {
     content.removeChild(content.children[1]);
     menuBtn.classList.add('active');
     homeBtn.classList.remove('active');
+    contactBtn.classList.remove('active');
     content.insertBefore(menu(), header.nextSibling);
+}
+
+function loadContact() {
+    content.removeChild(content.children[1]);
+    contactBtn.classList.add('active');
+    homeBtn.classList.remove('active');
+    menuBtn.classList.remove('active');
+    content.insertBefore(contact(), header.nextSibling);
 }

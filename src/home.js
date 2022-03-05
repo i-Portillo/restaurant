@@ -3,6 +3,7 @@ import BeforeAfterImg from './img/beard-before-and-after.jpg';
 
 function home() {
     const main = document.createElement('main');
+    main.classList.add('home');
 
     const welcome = document.createElement('h2');
     welcome.textContent = "Welcome!";
